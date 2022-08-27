@@ -1,86 +1,36 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"); */
-
-body {
-    font-size: 14px;
-    color: #4c5258;
-    letter-spacing: 0.5px;
-    overflow-x: hidden;
-    background-color: #f4f4f4;
+:root {
     font-family: Roboto, sans-serif;
-    margin: 0;
 }
-.image-awal {
-    max-height: 99vh;
-    width: 100%;
-    height: 100vh;
+body {
+    margin: 0;
+    padding: 0;
+}
+.bg {
     position: absolute;
-    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    object-fit: fill;
+    object-position: center;
 }
 .container {
-    padding-right: 60px;
-    padding-left: 60px;
-}
-.card {
-    width: 100%;
-    height: 75vh;
-    display: flex;
-    place-content: center;
-    place-items: center;
-}
-
-.image-name {
-    width: 100%;
-    height: -webkit-fill-available;
-    border-radius: 5px;
-    border: 2px solid #e1b632;
-    opacity: 0.9;
-}
-.custom {
-    position: absolute;
-    z-index: 1;
     display: grid;
-    place-items: center;
+    gap: 16px;
 }
-.text-name {
-    color: white;
-    font-size: 60px;
-    font-family: "Permanent Marker", cursive;
-    margin-bottom: 15px;
-    margin-top: 0;
+#question {
+    position: relative;
+    margin: 0 15%;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 8px;
+    min-height: 50vh;
+    z-index: 1;
 }
-.button {
+/* SECTION clock */
+#clock {
+    padding: 16px 0;
+    justify-self: center;
 }
-a i:hover {
-    background-color: #000;
-    color: yellowgreen;
-}
-.bx {
-    padding: 10px;
-    font-size: 35px;
-    color: #e1b632;
-    border: 2px solid #e6e93f;
-    border-radius: 145px;
-}
-
-.awal-clock {
-    text-align: center;
-}
-
-#particle-canvas {
-    max-width: 100%;
-    /* height: 30vh; */
-    background-color: #fff;
-    border-radius: 5px;
-}
-canvas {
-    height: -webkit-fill-available;
-}
-
-/* clock */
-
 .clock {
-    margin-top: 10px;
-    margin-bottom: 10px;
     position: relative;
     width: 100px;
     height: 100px;
@@ -169,6 +119,11 @@ canvas {
     border-radius: 5px;
 }
 
-.btn-music {
+/* SECTION particle */
+#particle-canvas {
     position: absolute;
+    width: 100%;
+    height: 100%;
+}
+#particle-canvas canvas {
 }

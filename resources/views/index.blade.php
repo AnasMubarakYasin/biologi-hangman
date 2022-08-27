@@ -18,7 +18,9 @@
 </head>
 
 <body>
-    <audio id="music" src="music/loby.mp3" autoplay></audio>
+    <audio id="music" autoplay>
+        <source src="music/loby.mp3" type="audio/mp3">
+    </audio>
     <img src="img/awal.jpg" class="image-awal" alt="">
     <div class="awal-clock">
         <div class="clock">
@@ -31,8 +33,9 @@
         {{-- <div id="particle-canvas"></div> --}}
         <div class="card">
             <div class="custom">
+                <button id="btn-music" class="btn-music">music</button>
                 <h2 class="text-name">YERNI</h2>
-                <a href="/quiz/start/quiz/start" class="button"><i class='bx bx-play bx-tada bx-rotate-90'>Play</i></a>
+                <a href="/quiz/start" class="button"><i class='bx bx-play bx-tada bx-rotate-90'>Play</i></a>
             </div>
             <img src="/img/2.jpg" alt="" class="image-name">
         </div>

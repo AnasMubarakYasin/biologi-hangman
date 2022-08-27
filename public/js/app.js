@@ -2,7 +2,7 @@ let hours = document.querySelector('.hours');
 let minutes = document.querySelector('.minutes');
 let seconds = document.querySelector('.seconds');
 
-function rotate(){
+function rotate() {
 	let date = new Date();
 	let getHours = date.getHours();
 	let getMinutes = date.getMinutes();
@@ -16,12 +16,12 @@ function rotate(){
 	let mD = Math.floor(mF * 360);
 	let hD = Math.floor(hF * 360);
 	//reset transition if 0 deg
-	if(sD == 0 ){
+	if (sD == 0) {
 		seconds.style.transition = null;
 		minutes.style.transition = null;
 		hours.style.transition = null;
 	}
-	else{
+	else {
 		//add transition if > 0 deg, to make smooth
 		seconds.style.transition = '1s';
 		minutes.style.transition = '.8s';
@@ -33,3 +33,9 @@ function rotate(){
 }
 
 setInterval(rotate, 1000);
+
+document.getElementById('btn-music').addEventListener('click', (event) => {
+	document.getElementById('music').play();
+})
+
+// document.querySelector('audio');

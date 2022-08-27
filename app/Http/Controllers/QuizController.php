@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\QuizPostRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class QuizController extends Controller
 {
+    protected $answer_path = 'answer.json';
+
     /**
      * @return \Illuminate\Http\Response
      */
@@ -96,6 +99,7 @@ class QuizController extends Controller
     public function answer(QuizPostRequest $request)
     {
         $data = $request->validated();
+        $answer = json_decode(Storage::get($this->answer));
         return response();
     }
 }

@@ -109,7 +109,7 @@
                 (this.g = this.canvas.getContext("2d")),
                 (this.canvas.width = this.i.size.width),
                 (this.canvas.height = this.i.size.height),
-                this.l(this.i, { position: "relative" }),
+                this.l(this.i, { position: "absolute" }),
                 this.l(this.canvas, { "z-index": "20", position: "relative" }),
                 window.addEventListener(
                     "resize",
