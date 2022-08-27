@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <audio src="music/loby.mp3" autoplay></audio>
+    <audio src="music/loby.mp3" autoplay loop></audio>
     <img src="img/awal.jpg" class="image-awal" alt="">
     <div class="awal-clock">
         <div class="clock">
@@ -32,7 +32,7 @@
         <div class="card">
             <div class="custom">
                 <h2 class="text-name">YERNI</h2>
-                <a href="" class="button"><i class='bx bx-play bx-tada bx-rotate-90'>Play</i></a>
+                <a href="/quiz/start" class="button"><i class='bx bx-play bx-tada bx-rotate-90'>Play</i></a>
             </div>
             <img src="/img/2.jpg" alt="" class="image-name">
         </div>
