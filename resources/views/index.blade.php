@@ -32,7 +32,7 @@
         <div class="card">
             <div class="custom">
                 <h2 class="text-name">YERNI</h2>
-                <a href="/quiz/start" class="button"><i class='bx bx-play bx-tada bx-rotate-90'>Play</i></a>
+                <a href="/quiz/start/quiz/start" class="button"><i class='bx bx-play bx-tada bx-rotate-90'>Play</i></a>
             </div>
             <img src="/img/2.jpg" alt="" class="image-name">
         </div>
