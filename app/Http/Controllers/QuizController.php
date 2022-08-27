@@ -84,7 +84,7 @@ class QuizController extends Controller
     /**
      * @return \Illuminate\Http\Response
      */
-    public function start(QuizPostRequest $request)
+    public function start()
     {
         return view('question.1');
     }
