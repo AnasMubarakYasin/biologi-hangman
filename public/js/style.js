@@ -7,11 +7,11 @@
         ("object" == typeof global && global.global === global && global);
     "function" == typeof define && define.amd
         ? define(["exports"], function (c) {
-              b.ParticleNetwork = a(b, c);
-          })
+            b.ParticleNetwork = a(b, c);
+        })
         : "object" == typeof module && module.exports
-        ? (module.exports = a(b, {}))
-        : (b.ParticleNetwork = a(b, {}));
+            ? (module.exports = a(b, {}))
+            : (b.ParticleNetwork = a(b, {}));
 })(function (a, b) {
     var c = function (a) {
         (this.canvas = a.canvas),
@@ -29,7 +29,7 @@
             (this.x > this.canvas.width + 20 || this.x < -20) &&
                 (this.velocity.x = -this.velocity.x),
                 (this.y > this.canvas.height + 20 || this.y < -20) &&
-                    (this.velocity.y = -this.velocity.y),
+                (this.velocity.y = -this.velocity.y),
                 (this.x += this.velocity.x),
                 (this.y += this.velocity.y);
         }),
@@ -61,18 +61,18 @@
         (b.prototype.init = function () {
             if (
                 ((this.k = document.createElement("div")),
-                this.i.appendChild(this.k),
-                this.l(this.k, {
-                    // position: "absolute",
-                    top: 0,
-                    left: 0,
-                    bottom: 0,
-                    right: 0,
-                    "z-index": 1,
-                }),
-                /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(
-                    this.options.background
-                ))
+                    this.i.appendChild(this.k),
+                    this.l(this.k, {
+                        // position: "absolute",
+                        top: 0,
+                        left: 0,
+                        bottom: 0,
+                        right: 0,
+                        "z-index": 1,
+                    }),
+                    /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(
+                        this.options.background
+                    ))
             )
                 this.l(this.k, { background: this.options.background });
             else {
@@ -118,30 +118,30 @@
                             this.i.offsetHeight === this.i.size.height
                             ? !1
                             : ((this.canvas.width = this.i.size.width =
-                                  this.i.offsetWidth),
-                              (this.canvas.height = this.i.size.height =
-                                  this.i.offsetHeight),
-                              clearTimeout(this.m),
-                              void (this.m = setTimeout(
-                                  function () {
-                                      this.o = [];
-                                      for (
-                                          var a = 0;
-                                          a <
-                                          (this.canvas.width *
-                                              this.canvas.height) /
-                                              this.options.density;
-                                          a++
-                                      )
-                                          this.o.push(new c(this));
-                                      this.options.interactive &&
-                                          this.o.push(this.p),
-                                          requestAnimationFrame(
-                                              this.update.bind(this)
-                                          );
-                                  }.bind(this),
-                                  500
-                              )));
+                                this.i.offsetWidth),
+                                (this.canvas.height = this.i.size.height =
+                                    this.i.offsetHeight),
+                                clearTimeout(this.m),
+                                void (this.m = setTimeout(
+                                    function () {
+                                        this.o = [];
+                                        for (
+                                            var a = 0;
+                                            a <
+                                            (this.canvas.width *
+                                                this.canvas.height) /
+                                            this.options.density;
+                                            a++
+                                        )
+                                            this.o.push(new c(this));
+                                        this.options.interactive &&
+                                            this.o.push(this.p),
+                                            requestAnimationFrame(
+                                                this.update.bind(this)
+                                            );
+                                    }.bind(this),
+                                    500
+                                )));
                     }.bind(this)
                 ),
                 (this.o = []);
@@ -154,27 +154,27 @@
                 this.o.push(new c(this));
             this.options.interactive &&
                 ((this.p = new c(this)),
-                (this.p.velocity = { x: 0, y: 0 }),
-                this.o.push(this.p),
-                this.canvas.addEventListener(
-                    "mousemove",
-                    function (a) {
-                        (this.p.x = a.clientX - this.canvas.offsetLeft),
-                            (this.p.y = a.clientY - this.canvas.offsetTop);
-                    }.bind(this)
-                ),
-                this.canvas.addEventListener(
-                    "mouseup",
-                    function (a) {
-                        (this.p.velocity = {
-                            x: (Math.random() - 0.5) * this.options.velocity,
-                            y: (Math.random() - 0.5) * this.options.velocity,
-                        }),
-                            (this.p = new c(this)),
-                            (this.p.velocity = { x: 0, y: 0 }),
-                            this.o.push(this.p);
-                    }.bind(this)
-                )),
+                    (this.p.velocity = { x: 0, y: 0 }),
+                    this.o.push(this.p),
+                    this.canvas.addEventListener(
+                        "mousemove",
+                        function (a) {
+                            (this.p.x = a.clientX - this.canvas.offsetLeft),
+                                (this.p.y = a.clientY - this.canvas.offsetTop);
+                        }.bind(this)
+                    ),
+                    this.canvas.addEventListener(
+                        "mouseup",
+                        function (a) {
+                            (this.p.velocity = {
+                                x: (Math.random() - 0.5) * this.options.velocity,
+                                y: (Math.random() - 0.5) * this.options.velocity,
+                            }),
+                                (this.p = new c(this)),
+                                (this.p.velocity = { x: 0, y: 0 }),
+                                this.o.push(this.p);
+                        }.bind(this)
+                    )),
                 requestAnimationFrame(this.update.bind(this));
         }),
         (b.prototype.update = function () {
@@ -185,16 +185,16 @@
                 for (var b = this.o.length - 1; b > a; b--) {
                     var c = Math.sqrt(
                         Math.pow(this.o[a].x - this.o[b].x, 2) +
-                            Math.pow(this.o[a].y - this.o[b].y, 2)
+                        Math.pow(this.o[a].y - this.o[b].y, 2)
                     );
                     c > 120 ||
                         (this.g.beginPath(),
-                        (this.g.strokeStyle = this.options.particleColor),
-                        (this.g.globalAlpha = (120 - c) / 120),
-                        (this.g.lineWidth = 0.7),
-                        this.g.moveTo(this.o[a].x, this.o[a].y),
-                        this.g.lineTo(this.o[b].x, this.o[b].y),
-                        this.g.stroke());
+                            (this.g.strokeStyle = this.options.particleColor),
+                            (this.g.globalAlpha = (120 - c) / 120),
+                            (this.g.lineWidth = 0.7),
+                            this.g.moveTo(this.o[a].x, this.o[a].y),
+                            this.g.lineTo(this.o[b].x, this.o[b].y),
+                            this.g.stroke());
                 }
             }
             0 !== this.options.velocity &&
@@ -204,19 +204,19 @@
             return "fast" === a
                 ? 1
                 : "slow" === a
-                ? 0.33
-                : "none" === a
-                ? 0
-                : 0.66;
+                    ? 0.33
+                    : "none" === a
+                        ? 0
+                        : 0.66;
         }),
         (b.prototype.j = function (a) {
             return "high" === a
                 ? 5e3
                 : "low" === a
-                ? 2e4
-                : isNaN(parseInt(a, 10))
-                ? 1e4
-                : a;
+                    ? 2e4
+                    : isNaN(parseInt(a, 10))
+                        ? 1e4
+                        : a;
         }),
         (b.prototype.l = function (a, b) {
             for (var c in b) a.style[c] = b[c];
@@ -229,11 +229,10 @@
 
 var canvasDiv = document.getElementById("particle-canvas");
 var options = {
-    particleColor: "#888",
-    // background:
-    //     "https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/img/demo-bg.jpg",
+    particleColor: "#000000",
+    // background: "https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/img/demo-bg.jpg",
     interactive: true,
-    speed: "medium",
+    speed: "high",
     density: "high",
 };
 var particleCanvas = new ParticleNetwork(canvasDiv, options);

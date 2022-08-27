@@ -31,10 +31,12 @@
                 </div>
             </div>
             <section id="question">
-                <div id="particle-canvas"></div>
-                <div>
-                    soal
+                <div id="content">
+                    1. Parenkim adalah jaringan dasar yang utama. Sel-sel parenkim ditemukan pada akar dan batang
+                    terutama sebagai pengisi bagian korteks batang, daun, bunga, buah dan biji. Jaringan parenkim
+                    memiliki ciri khas yaitu ada yang berklorofil dan bersifat meristematis.
                 </div>
+                <div id="particle-canvas"></div>
             </section>
         </section>
 
