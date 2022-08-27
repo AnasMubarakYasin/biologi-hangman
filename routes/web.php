@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\QuizController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'QuizController@index');
-Route::get('/quiz/start', 'QuizController@start');
-Route::post('/quiz/answer', 'QuizController@answer');
+Route::get('/', [QuizController::class, 'index']);
+Route::get('/quiz/start', [QuizController::class, 'start']);
+Route::post('/quiz/answer', [QuizController::class, 'answer']);
