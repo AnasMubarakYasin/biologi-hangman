@@ -42,7 +42,7 @@ body {
     place-items: center;
 }
 .text-name {
-    color: white;
+    color: #f2e2a1;
     font-size: 60px;
     font-family: "Permanent Marker", cursive;
     margin-bottom: 15px;
@@ -54,7 +54,7 @@ a i:hover {
     background-color: #000;
     color: yellowgreen;
 }
-.bx {
+.bx-rotate-90 {
     padding: 10px;
     font-size: 35px;
     color: #e1b632;
@@ -74,6 +74,20 @@ a i:hover {
 }
 canvas {
     height: -webkit-fill-available;
+}
+.full {
+    background: transparent;
+    border: none;
+    font-size: 45px;
+    color: #ff6a00;
+    position: absolute;
+    z-index: 99;
+    padding: 10px;
+    margin-top: 50px;
+}
+.btn-full .bx {
+    background-color: black;
+    border-radius: 50%;
 }
 
 /* clock */
@@ -171,4 +185,17 @@ canvas {
 
 .btn-music {
     position: absolute;
+}
+#btn-music {
+    background: transparent;
+    border: none;
+    font-size: 45px;
+    color: #ff6a00;
+    position: absolute;
+    z-index: 99;
+    padding: 10px;
+}
+.btn .bx {
+    background-color: black;
+    border-radius: 50%;
 }

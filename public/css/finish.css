@@ -1,69 +1,78 @@
-:root {
-    font-family: Roboto, sans-serif;
-}
 body {
+    font-size: 14px;
+    color: #4c5258;
+    letter-spacing: 0.5px;
+    overflow-x: hidden;
+    background-color: #f4f4f4;
+    font-family: Roboto, sans-serif;
     margin: 0;
-    padding: 0;
 }
-.bg {
-    position: absolute;
-    width: 100vw;
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: fit-content;
+}
+
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(to bottom, #00a859, #17a2b8);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.image-awal {
+    max-height: 99vh;
+    width: 100%;
     height: 100vh;
-    object-fit: fill;
-    object-position: center;
+    position: absolute;
+    z-index: -1;
 }
 .container {
-    display: grid;
-    gap: 16px;
+    padding-right: 60px;
+    padding-left: 60px;
 }
-#question {
-    position: relative;
-    margin: 0 15%;
-    background-color: bisque;
-    border: 5px solid #e1b632;
+.card {
+    width: 100%;
+    height: 75vh;
+    background-color: #fff;
     border-radius: 8px;
-    min-height: 50vh;
-    z-index: 1;
+    border: 3px solid #e1b632;
 }
-#question #content {
-    padding: 16px;
-    color: black;
+.header {
+    height: 100px;
     background-color: #6a96ab;
-}
-.content-soal {
-    padding: 16px;
-    color: black;
-    font-weight: bold;
-}
-form {
     display: flex;
-    justify-content: center;
-    z-index: 999;
-    position: relative;
-    gap: 5px;
+    font-size: 35px;
+    color: #e1b632;
+    place-content: center;
+    place-items: center;
+    gap: 35%;
+    text-align: center;
 }
-form .input {
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #6a96ab;
-    width: 350px;
+.card-finish {
+    padding: 15px;
+    overflow: scroll;
+    height: 349px;
 }
-form input:focus-visible {
-    outline: #e1b632 auto 2px;
+
+/* clock */
+
+.awal-clock {
+    text-align: center;
 }
-/* SECTION clock */
-#clock {
-    padding: 16px 0;
-    justify-self: center;
-}
+
 .clock {
+    margin-top: 10px;
+    margin-bottom: 10px;
     position: relative;
     width: 100px;
     height: 100px;
     background-image: url(/img/clock.png);
     background-color: #fff;
     background-size: 100% 100%;
-    border: 3px solid #e1b632;
+    border: 3px solid cadetblue;
     border-radius: 50%;
     display: inline-flex;
 }
@@ -145,46 +154,15 @@ form input:focus-visible {
     border-radius: 5px;
 }
 
-/* SECTION particle */
-#particle-canvas {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-}
-canvas {
-    opacity: 0.3;
-}
-.btn-soal {
-    background: transparent;
-    border-radius: 8px;
-    border: 1px solid #6a96ab;
-    transition: all 200ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
-}
-.btn-soal:hover {
-    background-color: #6a96ab;
-    border: 2px solid #e1b632;
-    transition-timing-function: linear;
-}
-.soal-gambar {
-    text-align: center;
-}
-.soal-gambar img {
-    border-radius: 5px;
-    border: 2px solid yellow;
-}
-
 @media (max-width: 986px) {
     .container {
-        display: block;
+        padding-right: 30px;
+        padding-left: 30px;
     }
-    #clock {
-        text-align: center;
+    .header {
+        gap: 20%;
     }
-    #question {
-        margin: 0 2%;
-    }
-    form {
-        padding: 0 10px;
+    .card-finish {
+        height: 367px;
     }
 }
