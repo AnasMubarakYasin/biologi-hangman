@@ -85,10 +85,12 @@ class QuizController extends Controller
     }
 
     /**
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function start()
+    public function start(Request $request)
     {
+        $request->session()->regenerate();
         return view('question.1');
     }
 
@@ -98,8 +100,20 @@ class QuizController extends Controller
      */
     public function answer(QuizPostRequest $request)
     {
+        $failed = $request->session()->get('failed', 0);
         $data = $request->validated();
-        $answer = json_decode(Storage::get($this->answer));
-        return response();
+        $answer = json_decode(Storage::get($this->answer_path), true);
+        $question = $data['question'];
+        $next_question = $question + 1;
+        if ($data['answer'] ==  $answer[$question]) {
+            $request->session()->put('failed', 0);
+            return view('question.' . $next_question);
+        }
+        if ($failed >= 3) {
+            $request->session()->put('failed', 0);
+            return view('question.' . $next_question);
+        }
+        $request->session()->put('failed', $failed + 1);
+        return back()->withInput()->withErrors(['errors' => ['wrong answer']]);
     }
 }

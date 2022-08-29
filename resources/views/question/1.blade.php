@@ -41,9 +41,14 @@
                 <div class="content-soal">
                     Jaringan parenkim yafong mengandung kloroplas atau klorofil disebut ....?
                 </div>
-                <form action="">
-                    <input type="text" class="input">
+                <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <input type="number" hidden name="question" value="1">
+                    <input type="text" class="input" name="answer" value="{{ old('answer') }}">
                     <button class="btn-soal" type="submit">Cek</button>
+                    @error('errors')
+                        <div>wrong answer</div>
+                    @enderror
                 </form>
                 <div id="particle-canvas"></div>
             </section>

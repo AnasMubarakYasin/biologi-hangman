@@ -44,8 +44,10 @@
             <div class="content-soal">
                 Berdasarkan pernyataan diatas siapakah aku?
             </div>
-            <form action="">
-                <input type="text" class="input">
+            <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="number" hidden name="question" value="1">
+                <input type="text" class="input" name="answer">
                 <button class="btn-soal" type="submit">Cek</button>
             </form>
             <div id="particle-canvas"></div>
