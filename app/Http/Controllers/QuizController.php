@@ -4,17 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\QuizPostRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class QuizController extends Controller
 {
     protected $answer_path = 'answer.json';
+    protected $question_number = 25;
+    protected $answer_chance = 3;
 
     /**
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
+        session()->reflash();
         return view('index');
     }
 
@@ -90,8 +94,20 @@ class QuizController extends Controller
      */
     public function start(Request $request)
     {
-        $request->session()->regenerate();
-        return view('question.1');
+        session()->invalidate();
+        return redirect()->route('quiz.question', ['number' => 1]);
+    }
+
+    /**
+     * @param  int $number
+     * @return \Illuminate\Http\Response
+     */
+    public function question(int $number)
+    {
+        if ($this->question_number < 1 && $this->question_number > 25) {
+            return abort(404);
+        }
+        return view('question.' . $number);
     }
 
     /**
@@ -100,20 +116,24 @@ class QuizController extends Controller
      */
     public function answer(QuizPostRequest $request)
     {
-        $failed = $request->session()->get('failed', 0);
+        $failed = session()->get('failed', 0);
+        $chance = session()->get('chance', $this->answer_chance);
         $data = $request->validated();
         $answer = json_decode(Storage::get($this->answer_path), true);
         $question = $data['question'];
         $next_question = $question + 1;
         if ($data['answer'] ==  $answer[$question]) {
-            $request->session()->put('failed', 0);
-            return view('question.' . $next_question);
+            session()->forget(['failed', 'chance']);
+            return redirect()->route('quiz.question', ['number' => $next_question]);
         }
-        if ($failed >= 3) {
-            $request->session()->put('failed', 0);
-            return view('question.' . $next_question);
+        $failed += 1;
+        $chance = $this->answer_chance - $failed;
+        if ($chance == 0) {
+            session()->forget(['failed', 'chance']);
+        } else {
+            session()->put('failed', $failed);
+            session()->put('chance', $chance);
         }
-        $request->session()->put('failed', $failed + 1);
         return back()->withInput()->withErrors(['errors' => ['wrong answer']]);
     }
 }

@@ -15,6 +15,9 @@
 
     {{-- style --}}
     <link rel="stylesheet" href="/css/question.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="/sweetalert2/sweetalert2.min.css" />
+    <script src="/sweetalert2/sweetalert2.min.js"></script>
 </head>
 
 <body>
@@ -47,24 +50,10 @@
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf
-                <input type="number" hidden name="question" value="1">
+                <input type="number" hidden name="question" value="2">
                 <input type="text" class="input" name="answer" value="{{ old('answer') }}">
                 <button class="btn-soal" type="submit">Cek</button>
-                @error('errors')
-                    <div>
-                        <script>
-                            Swal.fire({
-                                title: 'Opps!',
-                                text: 'Jawaban kamu masih salah 😤',
-                                imageUrl: '/img/salah.png',
-                                imageHeight: 200,
-                                imageAlt: 'Custom image',
-                                showConfirmButton: false,
-                                timer: 3000,
-                            })
-                        </script>
-                    </div>
-                @enderror
+                <x-failed.question />
             </form>
             <div id="particle-canvas"></div>
         </section>
