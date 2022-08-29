@@ -33,6 +33,7 @@
             </div>
         </div>
         <section id="question">
+            <div class="number">1</div>
             <div id="content">
                 Perhatikan pernyataan berikut: <br>
                 a. Memiliki banyak vakuola <br>
@@ -47,8 +48,23 @@
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="number" hidden name="question" value="1">
-                <input type="text" class="input" name="answer">
+                <input type="text" class="input" name="answer" value="{{ old('answer') }}">
                 <button class="btn-soal" type="submit">Cek</button>
+                @error('errors')
+                    <div>
+                        <script>
+                            Swal.fire({
+                                title: 'Opps!',
+                                text: 'Jawaban kamu masih salah 😤',
+                                imageUrl: '/img/salah.png',
+                                imageHeight: 200,
+                                imageAlt: 'Custom image',
+                                showConfirmButton: false,
+                                timer: 3000,
+                            })
+                        </script>
+                    </div>
+                @enderror
             </form>
             <div id="particle-canvas"></div>
         </section>

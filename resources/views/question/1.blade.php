@@ -15,6 +15,9 @@
 
         {{-- style --}}
         <link rel="stylesheet" href="/css/question.css">
+        <!-- SweetAlert2 -->
+        <link rel="stylesheet" href="/sweetalert2/sweetalert2.min.css" />
+        <script src="/sweetalert2/sweetalert2.min.js"></script>
     </head>
 
     <body>
@@ -33,13 +36,14 @@
                 </div>
             </div>
             <section id="question">
+                <div class="number">1</div>
                 <div id="content">
                     Parenkim adalah jaringan dasar yang utama. Sel-sel parenkim ditemukan pada akar dan batang
                     terutama sebagai pengisi bagian korteks batang, daun, bunga, buah dan biji. Jaringan parenkim
                     memiliki ciri khas yaitu ada yang berklorofil dan bersifat meristematis.
                 </div>
                 <div class="content-soal">
-                    Jaringan parenkim yafong mengandung kloroplas atau klorofil disebut ....?
+                    Jaringan parenkim yafong mengandung kloroplas atau klorofil disebut ...
                 </div>
                 <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -47,7 +51,19 @@
                     <input type="text" class="input" name="answer" value="{{ old('answer') }}">
                     <button class="btn-soal" type="submit">Cek</button>
                     @error('errors')
-                        <div>wrong answer</div>
+                        <div>
+                            <script>
+                                Swal.fire({
+                                    title: 'Opps!',
+                                    text: 'Jawaban kamu masih salah 😤',
+                                    imageUrl: '/img/salah.png',
+                                    imageHeight: 200,
+                                    imageAlt: 'Custom image',
+                                    showConfirmButton: false,
+                                    timer: 3000,
+                                })
+                            </script>
+                        </div>
                     @enderror
                 </form>
                 <div id="particle-canvas"></div>
