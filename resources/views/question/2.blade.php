@@ -36,7 +36,7 @@
             </div>
         </div>
         <section id="question">
-            <div class="number">1</div>
+            <div class="number">2</div>
             <div id="content">
                 Perhatikan pernyataan berikut: <br>
                 a. Memiliki banyak vakuola <br>
@@ -51,7 +51,7 @@
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="number" hidden name="question" value="2">
-                <input type="text" class="input" name="answer" value="{{ old('answer') }}">
+                <input type="text" autofocus class="input" name="answer" value="{{ old('answer') }}">
                 <button class="btn-soal" type="submit">Cek</button>
                 <x-failed.question />
             </form>

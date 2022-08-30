@@ -15,6 +15,9 @@
 
     {{-- style --}}
     <link rel="stylesheet" href="/css/question.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="/sweetalert2/sweetalert2.min.css" />
+    <script src="/sweetalert2/sweetalert2.min.js"></script>
 </head>
 
 <body>
@@ -33,14 +36,18 @@
             </div>
         </div>
         <section id="question">
+            <div class="number">21</div>
             <div id="content">
                 Anakan atau tumbuhan muda yang dihasilkan pada kultur jaringan disebut ...
             </div>
             <div class="content-soal">
             </div>
-            <form action="">
-                <input type="text" class="input">
+            <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="number" hidden name="question" value="21">
+                <input type="text" autofocus class="input" name="answer" value="{{ old('answer') }}">
                 <button class="btn-soal" type="submit">Cek</button>
+                <x-failed.question />
             </form>
             <div id="particle-canvas"></div>
         </section>

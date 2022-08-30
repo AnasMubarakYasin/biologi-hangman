@@ -15,6 +15,9 @@
 
     {{-- style --}}
     <link rel="stylesheet" href="/css/question.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="/sweetalert2/sweetalert2.min.css" />
+    <script src="/sweetalert2/sweetalert2.min.js"></script>
 </head>
 
 <body>
@@ -33,6 +36,7 @@
             </div>
         </div>
         <section id="question">
+            <div class="number">20</div>
             <div id="content">
                 Jaringan sklerenkim adalah jaringan penguat atau jaringan penyokong dengan dinding sekunder yang tebal
                 karena mengandung zat lignin. Jaringan sklerenkim ini hanya dijumpai pada organ tumbuhan yang tidak lagi
@@ -42,9 +46,12 @@
                 Sel-sel penyusun jaringan sklerenkim yang berbentuk bulat pendek dan mengandung zat lignin pada dinding
                 selnya sehingga bersifat kaku dan keras disebut ...
             </div>
-            <form action="">
-                <input type="text" class="input">
+            <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="number" hidden name="question" value="20">
+                <input type="text" autofocus class="input" name="answer" value="{{ old('answer') }}">
                 <button class="btn-soal" type="submit">Cek</button>
+                <x-failed.question />
             </form>
             <div id="particle-canvas"></div>
         </section>

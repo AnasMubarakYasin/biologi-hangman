@@ -15,6 +15,9 @@
 
     {{-- style --}}
     <link rel="stylesheet" href="/css/question.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="/sweetalert2/sweetalert2.min.css" />
+    <script src="/sweetalert2/sweetalert2.min.js"></script>
 </head>
 
 <body>
@@ -33,6 +36,7 @@
             </div>
         </div>
         <section id="question">
+            <div class="number">15</div>
             <div id="content">
                 Jaringan penyokong adalah jaringan tumbuhan yang berfungsi untuk menyokong tubuh tumbuhan. Jaringan
                 penyokong memberikan bentuk dan stabilitas pada tumbuhan. Jaringan penyokong membuat tumbuhan memiliki
@@ -41,9 +45,12 @@
             <div class="content-soal">
                 Jaringan penyokong yang terdapat pada batang tanaman yang masih muda adalah ...
             </div>
-            <form action="">
-                <input type="text" class="input">
+            <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="number" hidden name="question" value="15">
+                <input type="text" autofocus class="input" name="answer" value="{{ old('answer') }}">
                 <button class="btn-soal" type="submit">Cek</button>
+                <x-failed.question />
             </form>
             <div id="particle-canvas"></div>
         </section>

@@ -15,6 +15,9 @@
 
     {{-- style --}}
     <link rel="stylesheet" href="/css/question.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="/sweetalert2/sweetalert2.min.css" />
+    <script src="/sweetalert2/sweetalert2.min.js"></script>
 </head>
 
 <body>
@@ -33,6 +36,7 @@
             </div>
         </div>
         <section id="question">
+            <div class="number">17</div>
             <div id="content">
                 Lubang atau celah yang terdapat pada epidermis organ tumbuhan dan dibatasi oleh sel khusus atau sel
                 penutup, Merupakan salah satu organ tumbuhan yang digunakan untuk berinteraksi dengan lingkungannya.
@@ -42,9 +46,12 @@
             <div class="content-soal">
                 Siapakah aku …
             </div>
-            <form action="">
-                <input type="text" class="input">
+            <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="number" hidden name="question" value="17">
+                <input type="text" autofocus class="input" name="answer" value="{{ old('answer') }}">
                 <button class="btn-soal" type="submit">Cek</button>
+                <x-failed.question />
             </form>
             <div id="particle-canvas"></div>
         </section>

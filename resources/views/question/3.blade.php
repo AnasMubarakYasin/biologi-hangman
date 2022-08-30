@@ -36,6 +36,7 @@
             </div>
         </div>
         <section id="question">
+            <div class="number">3</div>
             <div id="content">
                 <div class="soal-gambar">
                     <img src="/img/soal1.png" alt="">
@@ -47,7 +48,7 @@
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="number" hidden name="question" value="3">
-                <input type="text" class="input" name="answer" value="{{ old('answer') }}">
+                <input type="text" autofocus class="input" name="answer" value="{{ old('answer') }}">
                 <button class="btn-soal" type="submit">Cek</button>
                 <x-failed.question />
             </form>

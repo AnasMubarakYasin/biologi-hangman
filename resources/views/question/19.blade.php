@@ -15,6 +15,9 @@
 
     {{-- style --}}
     <link rel="stylesheet" href="/css/question.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="/sweetalert2/sweetalert2.min.css" />
+    <script src="/sweetalert2/sweetalert2.min.js"></script>
 </head>
 
 <body>
@@ -33,6 +36,7 @@
             </div>
         </div>
         <section id="question">
+            <div class="number">19</div>
             <div id="content">
                 <div class="soal-gambar">
                     <img src="/img/soal7.png" style="height: 160px" alt="">
@@ -41,9 +45,12 @@
             <div class="content-soal">
                 Berdasarkan gambar diatas, anatomi yang ditunjukkan paa nomor 2 adalah ...
             </div>
-            <form action="">
-                <input type="text" class="input">
+            <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="number" hidden name="question" value="19">
+                <input type="text" autofocus class="input" name="answer" value="{{ old('answer') }}">
                 <button class="btn-soal" type="submit">Cek</button>
+                <x-failed.question />
             </form>
             <div id="particle-canvas"></div>
         </section>
