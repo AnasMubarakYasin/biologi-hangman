@@ -35,16 +35,18 @@
             <div class="header">
                 <div class="score-true">
                     Benar <br>
-                    50
+                    {{ session()->get('correct', 0) }}
                 </div>
                 <div class="score-false">
                     Salah <br>
-                    50
+                    {{ session()->get('incorrect', 0) }}
                 </div>
             </div>
             <div class="card-finish">
                 <div class="text-falsh">
-
+                    @foreach (session()->get('answers', []) as $question => $answer)
+                        <div>{{ $question }}. {{ $answer }}</div>
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\QuizPostRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
@@ -88,14 +89,29 @@ class QuizController extends Controller
         //
     }
 
+    protected function can_continue(int $question_number)
+    {
+        if ($question_number < 1 || $question_number > $this->question_number) {
+            return false;
+        }
+        return true;
+    }
+
     /**
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function start(Request $request)
+    public function start()
     {
         session()->invalidate();
         return redirect()->route('quiz.question', ['number' => 1]);
+    }
+
+    /**
+     * @return \Illuminate\Http\Response
+     */
+    public function end()
+    {
+        return view('question.finish');
     }
 
     /**
@@ -104,7 +120,10 @@ class QuizController extends Controller
      */
     public function question(int $number)
     {
-        if ($this->question_number < 1 && $this->question_number > 25) {
+        if (!$this->can_continue($number)) {
+            if ($number >= $this->question_number) {
+                return redirect()->route('quiz.end');
+            }
             return abort(404);
         }
         return view('question.' . $number);
@@ -118,17 +137,25 @@ class QuizController extends Controller
     {
         $failed = session()->get('failed', 0);
         $chance = session()->get('chance', $this->answer_chance);
+        $answers = session()->get('answers', []);
         $data = $request->validated();
-        $answer = json_decode(Storage::get($this->answer_path), true);
         $question = $data['question'];
+        $answer = json_decode(Storage::get($this->answer_path), true);
         $next_question = $question + 1;
         if ($data['answer'] ==  $answer[$question]) {
+            session()->increment('correct');
             session()->forget(['failed', 'chance']);
+            if ($question >= $this->question_number) {
+                return redirect()->route('quiz.end');
+            }
             return redirect()->route('quiz.question', ['number' => $next_question]);
         }
         $failed += 1;
         $chance = $this->answer_chance - $failed;
         if ($chance == 0) {
+            $answers = Arr::add($answers, $question . '', $answer[$question]);
+            session()->put('answers', $answers);
+            session()->increment('incorrect');
             session()->forget(['failed', 'chance']);
         } else {
             session()->put('failed', $failed);

@@ -16,5 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [QuizController::class, 'index'])->name('quiz.index');
 Route::get('/quiz/start', [QuizController::class, 'start'])->name('quiz.start');
+Route::get('/quiz/end', [QuizController::class, 'end'])->name('quiz.end');
 Route::get('/quiz/question/{number}', [QuizController::class, 'question'])->name('quiz.question');
 Route::post('/quiz/answer', [QuizController::class, 'answer'])->name('quiz.answer');
