@@ -34,8 +34,6 @@ function rotate() {
 
 setInterval(rotate, 1000);
 
-document.getElementById('btn-music').addEventListener('click', (event) => {
+document.getElementById('btn-music')?.addEventListener('click', (event) => {
 	document.getElementById('music').play();
 })
-
-// document.querySelector('audio');

@@ -18,6 +18,7 @@
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="/sweetalert2/sweetalert2.min.css" />
     <script src="/sweetalert2/sweetalert2.min.js"></script>
+    @include('components.failed.navigation-prevent', ['question' => 2])
 </head>
 
 <body>
