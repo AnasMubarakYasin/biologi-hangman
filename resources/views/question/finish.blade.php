@@ -43,10 +43,21 @@
                 </div>
             </div>
             <div class="card-finish">
-                <div class="text-falsh">
+                <h2 style="color: #000; text-align: center">Jawaban Benar Dari Soal Yang Salah</h2>
+                <div class="text-falsh" style="overflow: scroll; height: 245px;">
                     @foreach (session()->get('answers', []) as $question => $answer)
-                        <div>{{ $question }}. {{ $answer }}</div>
+                        <div class="question-flase">
+                            <div class="number">
+                                {{ $question }}.
+                            </div>
+                            <div class="question">
+                                {{ $answer }}
+                            </div>
+                        </div>
                     @endforeach
+                </div>
+                <div class="btn">
+                    <a href="/" class="button">Back To Start</i></a>
                 </div>
             </div>
         </div>

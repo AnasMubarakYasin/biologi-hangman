@@ -53,10 +53,7 @@ body {
 }
 .card-finish {
     padding: 15px;
-    overflow: scroll;
-    height: 349px;
 }
-
 /* clock */
 
 .awal-clock {
@@ -153,6 +150,43 @@ body {
     left: -1px;
     border-radius: 5px;
 }
+.question-flase {
+    display: flex;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+}
+.number {
+    width: 28px;
+    padding: 5px;
+}
+.question {
+    padding: 5px;
+}
+.text-flash {
+    overflow: scroll;
+    height: 132px;
+}
+.button {
+}
+.btn {
+    display: flex;
+    justify-content: center;
+}
+a:hover {
+    background-image: none;
+    color: #000;
+}
+.button {
+    padding: 10px;
+    color: #fff;
+    border: 2px solid #e6e93f;
+    background-image: linear-gradient(to bottom, #00a859, #17a2b8);
+    border-radius: 145px;
+    text-decoration: none;
+    font-size: 15px;
+    text-align: center;
+}
 
 @media (max-width: 986px) {
     .container {
@@ -161,8 +195,5 @@ body {
     }
     .header {
         gap: 20%;
-    }
-    .card-finish {
-        height: 367px;
     }
 }
