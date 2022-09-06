@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\QuizPostRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
@@ -19,7 +20,7 @@ class QuizController extends Controller
      */
     public function index()
     {
-        session()->reflash();
+        session()->invalidate();
         return view('index');
     }
 
@@ -103,6 +104,8 @@ class QuizController extends Controller
     public function start()
     {
         session()->invalidate();
+        session()->put('question', 1);
+        session()->put('key', Hash::make(today()->getTimestamp() . ''));
         return redirect()->route('quiz.question', ['number' => 1]);
     }
 
@@ -120,6 +123,9 @@ class QuizController extends Controller
      */
     public function question(int $number)
     {
+        if (!session()->has('key')) {
+            return redirect('/');
+        }
         if (!$this->can_continue($number)) {
             if ($number >= $this->question_number) {
                 return redirect()->route('quiz.end');
@@ -145,6 +151,7 @@ class QuizController extends Controller
         if ($data['answer'] ==  $answer[$question]) {
             session()->increment('correct');
             session()->forget(['failed', 'chance']);
+            session()->put('question', $next_question);
             if ($question >= $this->question_number) {
                 return redirect()->route('quiz.end');
             }
@@ -157,6 +164,7 @@ class QuizController extends Controller
             session()->put('answers', $answers);
             session()->increment('incorrect');
             session()->forget(['failed', 'chance']);
+            session()->put('question', $next_question);
         } else {
             session()->put('failed', $failed);
             session()->put('chance', $chance);
