@@ -43,7 +43,7 @@
                     memiliki ciri khas yaitu ada yang berklorofil dan bersifat meristematis.
                 </div>
                 <div class="content-soal">
-                    Jaringan parenkim yafong mengandung kloroplas atau klorofil disebut ...
+                    Jaringan parenkim yang mengandung kloroplas atau klorofil disebut ...
                 </div>
                 <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                     @csrf
