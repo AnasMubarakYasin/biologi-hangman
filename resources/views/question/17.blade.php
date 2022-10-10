@@ -38,13 +38,10 @@
         <section id="question">
             <div class="number">17</div>
             <div id="content">
-                Lubang atau celah yang terdapat pada epidermis organ tumbuhan dan dibatasi oleh sel khusus atau sel
-                penutup, Merupakan salah satu organ tumbuhan yang digunakan untuk berinteraksi dengan lingkungannya.
-                Fungsi utama sebagai tempat pertukaran gas, seperti CO2 yang diperlukan oleh tumbuhan dalam proses
-                fotosintesis.
+                Kelainan pada tulang dimana terjadi penumpukan bahan kapur diantara dua tulang sehinggga menyebabkan
+                sendi sulit digerakkan disebut ...
             </div>
             <div class="content-soal">
-                Siapakah aku …
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

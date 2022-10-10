@@ -38,22 +38,12 @@
         <section id="question">
             <div class="number">12</div>
             <div id="content">
-                <ul style="margin: 0; padding: 0 16px;">
-                    <li>Fungsi utama dari jaringan epidermis yaitu sebagai pelindung paling luar pada setiap organ
-                        tumbuhan.
-                        Selain itu, epidermis menjadi jaringan tempat pertukaran zat dan menghambat hilangnya air karena
-                        penguapan.</li>
-                    <li>Jaringan mesofil adalah jaringan yang tersusun dari sel-sel parenkim atau jaringan dasar dan
-                        berfungsi
-                        sebagai pengisi antara jaringan lain</li>
-                    <li>Endodermis membatasi bagian dalam akar dengan korteks. Endodermis juga mencegah keluarnya air
-                        dari
-                        stele ke korteks, fungsi lain dari endodermis yaitu mengatur masuknya zat ke dalam pembuluh akar
-                    </li>
-                </ul>
+                Pembetukan tulang merupakan hal yang penting dalam pertumbuhan dan perkembangan. Tulang membutuhkan
+                berbagai komponen seperti kalsium, fosform dan vitamin D. tanpa hal tersebut tulang tidak akan tumbuh
+                dengan baik. Seperti halnya jika dalam pembentukan tulag kekurangan vitamin D, yang menyebabkan tulang
+                menjadi lentur dan bengkok. Menurut kamu penyakit apakah ini ...
             </div>
             <div class="content-soal">
-                Dari ketiga jaringan diatas merupakan hasil difrensiasi dari jaringan …
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

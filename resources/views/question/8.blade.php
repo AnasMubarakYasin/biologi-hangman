@@ -38,11 +38,13 @@
         <section id="question">
             <div class="number">8</div>
             <div id="content">
-                Derivat epidermis adalah suatu bangunan atau alat tambahan pada epidermis yang berasal dari epidermis,
-                tapi memiliki struktur dan fungsi yang berlainan dengan epidermis itu sendiri.
+                Berdasarkan gambar rangka tubuh dibawah ini, tulang yang terdiri dari lima tulang belakang yang menyatu
+                adalah ...
+                <div class="soal-gambar">
+                    <img src="/img/gambar8.png" alt="">
+                </div>
             </div>
             <div class="content-soal">
-                Salah satu derivate epidermis yang berfungsi untuk mengurangi gangguan hewan adalah …
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

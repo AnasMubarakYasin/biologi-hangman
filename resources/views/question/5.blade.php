@@ -38,15 +38,10 @@
         <section id="question">
             <div class="number">5</div>
             <div id="content">
-                Perhatikan pernyataan berikut: <br>
-                • Terdiri atas sel-sel muda yang aktif membelah dan berukuran kecil <br>
-                • Susunan selnya sangat rapat sehingga tidak memiliki ruang antarsel. <br>
-                • Bentuk selnya bulat, lonjong, poligonal, kuboid, atau prismatik, dengan dinding sel yang tipis. <br>
-                • Sel-selnya memiliki banyak protoplasma yang memenuhi isi sel.
-
+                Pada tulang keras antara lakuna satu dengan yang lainnya dihubungkan dengan suatu saluran yang disebut
+                ...
             </div>
             <div class="content-soal">
-                Jaringan yang dimaksud adalah …
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

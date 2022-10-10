@@ -38,11 +38,12 @@
         <section id="question">
             <div class="number">7</div>
             <div id="content">
-                terletak pada ujung akar dan ujung batang dan terus membelah untuk menambah tinggi tanaman serta
-                menambah panjang akar. mempengaruhi pertumbuhan batang tanaman untuk menjadi tambah besar.
+                Perhatikan gambar dibawah ini!
+                <div class="soal-gambar">
+                    <img src="/img/gambar7.png" alt="">
+                </div>
             </div>
             <div class="content-soal">
-                Siapakah aku …
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

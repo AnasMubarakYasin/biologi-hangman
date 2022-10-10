@@ -38,12 +38,10 @@
         <section id="question">
             <div class="number">9</div>
             <div id="content">
-                <div class="soal-gambar">
-                    <img src="/img/soal3.png" alt="">
-                </div>
+                Tulang yang menjadi penghubung antara tulang selangka (klavikula) dengan tulang lengan atas (humerus)
+                adalah ...
             </div>
             <div class="content-soal">
-                Berdasarkan gambar di atas, huruf X menunjukkkan anatomi daun bagian …
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

@@ -145,10 +145,10 @@ class QuizController extends Controller
         $chance = session()->get('chance', $this->answer_chance);
         $answers = session()->get('answers', []);
         $data = $request->validated();
-        $question = $data['question'];
-        $answer = json_decode(Storage::get($this->answer_path), true);
+        $question = +$data['question'];
+        $answer = json_decode(Storage::get($this->answer_path));
         $next_question = $question + 1;
-        if ($data['answer'] ==  $answer[$question]) {
+        if ($data['answer'] ==  $answer[$question - 1]) {
             session()->increment('correct');
             session()->forget(['failed', 'chance']);
             session()->put('question', $next_question);

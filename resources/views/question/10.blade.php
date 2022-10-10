@@ -38,13 +38,11 @@
         <section id="question">
             <div class="number">10</div>
             <div id="content">
-                Terletak di sebelah dalam korteks, berupa 1 lapis sel yang tersusun rapat tanpa ruang antar sel. dinding
-                selnya mengalami penebalan gabus. deretan sel-sel penebalan gabusnya dinamakan pita kaspari. penebalan
-                gabus ini tidak dapat ditembus air sehingga air harus masuk ke silinder pusat. Merupakan Jaringan
-                pembatas antara daerah korteks dengan bagian atas stele akar.
+                Persendian tulang yang masih memungkinkan adanya sedikit gerakan kedua ujung tulang yang dihubungkan
+                oleh tulang seperti pada persendian antara ruas-ruas tulang belakang, dan persendian antara tulang
+                belakang dengan tulang Iga. Persendian tersebut adalah ...
             </div>
             <div class="content-soal">
-                Siapakah aku …
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

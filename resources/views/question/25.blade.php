@@ -38,9 +38,13 @@
         <section id="question">
             <div class="number">25</div>
             <div id="content">
-                Mengangkut hasil fotosintesis dari daun keseluruh tubuh tumbuhan merupakan fungsi dari …
+                Perhatian gambar dibawah ini!
+                <div class="soal-gambar">
+                    <img src="/img/gambar25" alt="">
+                </div>
             </div>
             <div class="content-soal">
+                Gambar diatas merupakan otot ...
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

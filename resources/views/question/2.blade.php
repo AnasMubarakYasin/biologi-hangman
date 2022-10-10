@@ -39,15 +39,13 @@
         <section id="question">
             <div class="number">2</div>
             <div id="content">
-                Perhatikan pernyataan berikut: <br>
-                a. Memiliki banyak vakuola <br>
-                b. Terdapat banyak rongga antarsel <br>
-                c. Ukuran selnya besar<br>
-                d. Tersusun atas sel-sel hidup
+                Persendian merupakan salah satu organ terpenting dalam sistem gerak. Tanpa adanya sendi tidak ada yang
+                menghubungkan dua tulang atau lebih. Tulang-tulang tersebut diikat oleh struktur yang kuat disebut
+                ligamen. Selain terdapat ligamen, juga terdapat sebuah struktur yang menghubungkan bagian tulang dengan
+                otot, struktur tersebut adalah ...
 
             </div>
             <div class="content-soal">
-                Berdasarkan pernyataan diatas siapakah aku?
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

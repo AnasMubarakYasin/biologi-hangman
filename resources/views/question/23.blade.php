@@ -38,15 +38,15 @@
         <section id="question">
             <div class="number">23</div>
             <div id="content">
-                perhatikan pernyataan berikut
+                Ciri-ciri:
                 <ul style="margin: 0; padding: 0 16px;">
-                    <li>Tersusun atas sel-sel mati.</li>
-                    <li>Dinding sekundernya mengalami penebalan lignin.</li>
-                    <li>Ditemukan pada organ yang sudah tidak melakukan pertumbuhan dan perkembangan.</li>
+                    <li>a. Tulang patah atau retak.</li>
+                    <li>b. Terjadi pembengkakan.</li>
+                    <li>c. Kemungkinan terjadi pendarahan.</li>
                 </ul>
             </div>
             <div class="content-soal">
-                Berdasarkan pernyataan diatan jaringan yang dimaksud adalah ...
+                Jenis gangguan pada sistem gerak tersebut adalah ...
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

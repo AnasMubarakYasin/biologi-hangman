@@ -38,12 +38,13 @@
         <section id="question">
             <div class="number">19</div>
             <div id="content">
+                Lihatlah gambar dibawah ini!
                 <div class="soal-gambar">
-                    <img src="/img/soal7.png" style="height: 160px" alt="">
+                    <img src="/img/gambar19.png" style="height: 160px" alt="">
                 </div>
             </div>
             <div class="content-soal">
-                Berdasarkan gambar diatas, anatomi yang ditunjukkan paa nomor 2 adalah ...
+                Jenis sendi yang ditunjukkan oleh anak panah adalah …
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

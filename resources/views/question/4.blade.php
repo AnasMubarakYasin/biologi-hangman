@@ -38,14 +38,13 @@
         <section id="question">
             <div class="number">4</div>
             <div id="content">
-                Perhatikanlah keterangan di bawah ini! <br>
-                • Merupakan jaringan tumbuhan yang terletak paling luar <br>
-                • Terdapat pada akar, batang, daun, bunga, buah dan biji <br>
-                • Sel-selnya tersusun rapat <br>
-                • Kadang memiliki lapisan kutikula di permukaan luarnya <br>
+                Lihatlah gambar tengkorak dibawah ini!
+                <div class="soal-gambar">
+                    <img src="/img/gambar3.png" alt="">
+                </div>
             </div>
             <div class="content-soal">
-                Dari keterangan di atas, jaringan yang dimaksud adalah …
+                Tulang Yang ditunjuk oleh angka 2 adalah …
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

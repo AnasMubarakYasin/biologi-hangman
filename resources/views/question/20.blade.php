@@ -43,8 +43,8 @@
                 mengadakan pertumbuhan dan perkembangan.
             </div>
             <div class="content-soal">
-                Sel-sel penyusun jaringan sklerenkim yang berbentuk bulat pendek dan mengandung zat lignin pada dinding
-                selnya sehingga bersifat kaku dan keras disebut ...
+                Rangka dada kita dibentuk oleh sejumlah tulang antara lain yang melekat pada tulang dada dan tulang
+                punggung adalah tulang ...
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

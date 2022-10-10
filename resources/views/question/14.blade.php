@@ -38,12 +38,13 @@
         <section id="question">
             <div class="number">14</div>
             <div id="content">
-                Pertumbuhan sekunder adalah pertumbuhan tanaman yang berkaitan dengan proses penambahan lebar (diameter
-                pada tumbuhan). Yang termasuk pertumbuhan sekunder adalah pertumbuhan pada bagian bagian batang dan akar
-                tumbuhan.
+                Perhatikan gambar berikut!
+                <div class="soal-gambar">
+                    <img src="/img/gambar14.png" alt="">
+                </div>
             </div>
             <div class="content-soal">
-                Pertumbuhan sekunder tersebut karena adanya aktifitas jaringan meristem yaitu meristem …
+                Jenis sendi yang ditunjukkan huruf X adalah …
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

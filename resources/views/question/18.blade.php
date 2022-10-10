@@ -43,8 +43,8 @@
                 </div>
             </div>
             <div class="content-soal">
-                Berdasarkan gambar diatas jaringan yang tunjuk merupakan jaringan yang memiliki banyak klorofil.
-                Identitas dari jaringan yang ditunjuk adalah ...
+                Pada tulang keras antara lakuna satu dengan yang lainnya dihubungkan dengan suatu saluran suatu saluran
+                yang disebut ...
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

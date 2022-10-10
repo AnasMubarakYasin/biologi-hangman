@@ -39,12 +39,10 @@
             <section id="question">
                 <div class="number">1</div>
                 <div id="content">
-                    Parenkim adalah jaringan dasar yang utama. Sel-sel parenkim ditemukan pada akar dan batang
-                    terutama sebagai pengisi bagian korteks batang, daun, bunga, buah dan biji. Jaringan parenkim
-                    memiliki ciri khas yaitu ada yang berklorofil dan bersifat meristematis.
+                    Pada hewan vertebrata terdapat kumpulan tulang rawan (kartilago) dan tulang keras yang membentuk
+                    suatu rangkain menurut aturan tertentu yang disebut rangka ...
                 </div>
                 <div class="content-soal">
-                    Jaringan parenkim yang mengandung kloroplas atau klorofil disebut ...
                 </div>
                 <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                     @csrf

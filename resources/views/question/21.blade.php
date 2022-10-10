@@ -38,7 +38,7 @@
         <section id="question">
             <div class="number">21</div>
             <div id="content">
-                Anakan atau tumbuhan muda yang dihasilkan pada kultur jaringan disebut ...
+                Pergerakan otot untuk membengkokkan persendian membentuk sudut yang lebih kecil disebut dengan ...
             </div>
             <div class="content-soal">
             </div>

@@ -38,12 +38,12 @@
         <section id="question">
             <div class="number">22</div>
             <div id="content">
-                merupakan lapisan berlilin yang terdapat pada permukaan batang serta daun yang dapat mencegah terjadinya
-                kekeringan pada tumbuhan darat. Lapisan ini terletak pada bagian terluar sel-sel epidermis, khususnya
-                pada bagian tumbuhan yang tumbuh di atas tanah seperti batang dan daun.
+                Gambar diabawah ini adalah gambar otot ...
+                <div class="soal-gambar">
+                    <img src="/img/gambar22.png" style="height: 160px" alt="">
+                </div>
             </div>
             <div class="content-soal">
-                Permukaan daun biasanya tampak mengilap karena jaringan epidermis di permukaan daun dilapisi oleh …
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

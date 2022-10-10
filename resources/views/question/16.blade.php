@@ -43,7 +43,8 @@
                 </div>
             </div>
             <div class="content-soal">
-                Berdasarkan gambar di atas, bagian akar yang ditunjukkan pada huruf X adalah …
+                Tulang merupakan salah satu alat gerak pasif karena tidak dapat bergerak sendiri, namun harus dibantu
+                oleh …
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

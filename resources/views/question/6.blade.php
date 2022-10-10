@@ -43,7 +43,10 @@
                 </div>
             </div>
             <div class="content-soal">
-                Bagian yang tunjukan oleh huruf X adalah …
+                Pada zaman dahulu sebelumnya ditemukan kompor, kebanyakan orangtua menggunakan tungku. Pada saat masak,
+                biasanya dalam posisi duduk. Berbeda dengan sekaran, pada umumnya selalu berdiri. Nah, jika melakukan
+                aktivitas seperti memasak menggunakan tungku dalam jangkau waktu bertahun-tahun, maka akan terjadi
+                gangguan/ kelainan pada sistem gerak. Kemungkinan gangguan yang terjadi dari kasus tersebut adalah …
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

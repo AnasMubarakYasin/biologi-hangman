@@ -38,7 +38,11 @@
         <section id="question">
             <div class="number">13</div>
             <div id="content">
-                Jaringan pelindung yang terdapat pada batang tanaman yang telah mengalami proses pengayuan disebut …
+                Bu evi adalah seorang ibu dari 3 orang anakn yang berusia 55 tahun. Bu evi hanyalah ibu rumah tangga
+                sedangkan suaminya hanyalah tukang ojek dikawassan rumahnya. Selama mengandung ketiga anaknya bu evi
+                jarang meminum susu dan hanya mengkomsumsi makanan sederhana seperti tahu dan tempe. Lima tahun yang
+                lalu bu evi mulai mengalami gejala nyeri pada otot dan sendi. Sakit punggung yang berlebihan, serta
+                penurunan tinggi badan, gangguan yang dialami bu evi adalah …
             </div>
             <div class="content-soal">
             </div>

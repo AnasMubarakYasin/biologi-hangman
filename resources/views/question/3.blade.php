@@ -38,12 +38,10 @@
         <section id="question">
             <div class="number">3</div>
             <div id="content">
-                <div class="soal-gambar">
-                    <img src="/img/soal1.png" alt="">
-                </div>
+                Tulang yang terdiri atas sel-sel tulang yang disebut kondrosit dan mengeluarkan matriks yang disebut
+                kondrin adalah ...
             </div>
             <div class="content-soal">
-                Bagian yang ditunjukkan oleh huruf Y adalah ...
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

@@ -38,13 +38,13 @@
         <section id="question">
             <div class="number">24</div>
             <div id="content">
+                Perhatikan gambar dibawah ini!
                 <div class="soal-gambar">
-                    <img src="/img/soal8.png" alt="">
+                    <img src="/img/gambar24" alt="">
                 </div>
             </div>
             <div class="content-soal">
-                Berdasarkan gambar di atas, struktur anatomi batang yang ditunjukkan pada tanda panah diatas adalah
-                bagian …
+                Berdasarkan gambar diatas gambar yang ditunjukkan oleh nomor 2 adalah tulang rusuk …
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

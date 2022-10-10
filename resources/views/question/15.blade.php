@@ -38,12 +38,13 @@
         <section id="question">
             <div class="number">15</div>
             <div id="content">
-                Jaringan penyokong adalah jaringan tumbuhan yang berfungsi untuk menyokong tubuh tumbuhan. Jaringan
-                penyokong memberikan bentuk dan stabilitas pada tumbuhan. Jaringan penyokong membuat tumbuhan memiliki
-                bentuk dan mempertahankan bentuknya walau terjadi gangguan dari lingkungan luar.
+                Kebiasaan duduk seperti pada gambar dibawah ini dapat mengakibatkan kelainan tulang punggung yang
+                disebut ...
+                <div class="soal-gambar">
+                    <img src="/img/gambar15.png" alt="">
+                </div>
             </div>
             <div class="content-soal">
-                Jaringan penyokong yang terdapat pada batang tanaman yang masih muda adalah ...
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

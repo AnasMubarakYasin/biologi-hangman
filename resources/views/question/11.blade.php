@@ -43,7 +43,9 @@
                 </div>
             </div>
             <div class="content-soal">
-                Berdasarkan gambar di atas, nomor 5 menunjukkkan anatomi batang bagian …
+                Persendian yang sama sekali tidak dapat digerakkan karena tidak adanya celah sendi. Tulang-tulang
+                dipersatukan oleh jaringan tulang, seperti terjadi pada persambungan tulang tulang-tulang tengkorak.
+                Persendian tersebut adalah …
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf
