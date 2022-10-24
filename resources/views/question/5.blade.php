@@ -38,8 +38,8 @@
         <section id="question">
             <div class="number">5</div>
             <div id="content">
-                Pada tulang keras antara lakuna satu dengan yang lainnya dihubungkan dengan suatu saluran yang disebut
-                ...
+                Saluran yang menghubungkan tulang keras antara satu lakuna dengan yang lainnya tulang keras antara
+                lakuna satu dengan yang lainnya disebut …
             </div>
             <div class="content-soal">
             </div>

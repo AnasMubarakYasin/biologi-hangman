@@ -40,13 +40,14 @@
             <div id="content">
                 Perhatian gambar dibawah ini!
                 <div class="soal-gambar">
-                    <img src="/img/gambar25" alt="">
+                    <img src="/img/gambar25.png" alt="">
                 </div>
             </div>
             <div class="content-soal">
                 Gambar diatas merupakan otot ...
             </div>
-            <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
+            <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data"
+                style="padding-bottom: 10px">
                 @csrf
                 <input type="number" hidden name="question" value="25">
                 <input type="text" autofocus class="input" name="answer" value="{{ old('answer') }}">

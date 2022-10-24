@@ -38,7 +38,7 @@
         <section id="question">
             <div class="number">13</div>
             <div id="content">
-                Bu evi adalah seorang ibu dari 3 orang anakn yang berusia 55 tahun. Bu evi hanyalah ibu rumah tangga
+                Bu evi adalah seorang ibu dari 3 orang anak yang berusia 55 tahun. Bu evi hanyalah ibu rumah tangga
                 sedangkan suaminya hanyalah tukang ojek dikawassan rumahnya. Selama mengandung ketiga anaknya bu evi
                 jarang meminum susu dan hanya mengkomsumsi makanan sederhana seperti tahu dan tempe. Lima tahun yang
                 lalu bu evi mulai mengalami gejala nyeri pada otot dan sendi. Sakit punggung yang berlebihan, serta

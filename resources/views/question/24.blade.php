@@ -40,7 +40,7 @@
             <div id="content">
                 Perhatikan gambar dibawah ini!
                 <div class="soal-gambar">
-                    <img src="/img/gambar24" alt="">
+                    <img src="/img/gambar24.png" width="165" height="165" alt="">
                 </div>
             </div>
             <div class="content-soal">

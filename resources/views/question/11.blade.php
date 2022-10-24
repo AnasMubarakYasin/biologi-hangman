@@ -38,14 +38,12 @@
         <section id="question">
             <div class="number">11</div>
             <div id="content">
-                <div class="soal-gambar">
-                    <img src="/img/soal4.png" alt="">
-                </div>
-            </div>
-            <div class="content-soal">
                 Persendian yang sama sekali tidak dapat digerakkan karena tidak adanya celah sendi. Tulang-tulang
                 dipersatukan oleh jaringan tulang, seperti terjadi pada persambungan tulang tulang-tulang tengkorak.
                 Persendian tersebut adalah …
+            </div>
+            <div class="content-soal">
+
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

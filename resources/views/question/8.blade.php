@@ -41,12 +41,13 @@
                 Berdasarkan gambar rangka tubuh dibawah ini, tulang yang terdiri dari lima tulang belakang yang menyatu
                 adalah ...
                 <div class="soal-gambar">
-                    <img src="/img/gambar8.png" alt="">
+                    <img src="/img/gambar8.png" width="300px" height="300px" alt="">
                 </div>
             </div>
             <div class="content-soal">
             </div>
-            <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
+            <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data"
+                style="padding-bottom: 10px">
                 @csrf
                 <input type="number" hidden name="question" value="8">
                 <input type="text" autofocus class="input" name="answer" value="{{ old('answer') }}">

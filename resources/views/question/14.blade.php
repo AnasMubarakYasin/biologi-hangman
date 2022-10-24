@@ -46,7 +46,8 @@
             <div class="content-soal">
                 Jenis sendi yang ditunjukkan huruf X adalah …
             </div>
-            <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
+            <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data"
+                style="padding-bottom: 10px">
                 @csrf
                 <input type="number" hidden name="question" value="14">
                 <input type="text" autofocus class="input" name="answer" value="{{ old('answer') }}">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\QuizPostRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
@@ -127,7 +128,7 @@ class QuizController extends Controller
             return redirect('/');
         }
         if (!$this->can_continue($number)) {
-            if ($number >= $this->question_number) {
+            if ($number == $this->question_number + 1) {
                 return redirect()->route('quiz.end');
             }
             return abort(404);
@@ -148,7 +149,7 @@ class QuizController extends Controller
         $question = +$data['question'];
         $answer = json_decode(Storage::get($this->answer_path));
         $next_question = $question + 1;
-        if ($data['answer'] ==  $answer[$question - 1]) {
+        if (Str::of($data['answer'])->lower() ==  $answer[$question - 1]) {
             session()->increment('correct');
             session()->forget(['failed', 'chance']);
             session()->put('question', $next_question);
@@ -160,7 +161,7 @@ class QuizController extends Controller
         $failed += 1;
         $chance = $this->answer_chance - $failed;
         if ($chance == 0) {
-            $answers = Arr::add($answers, $question . '', $answer[$question]);
+            $answers = Arr::add($answers, $question . '', $answer[$question - 1]);
             session()->put('answers', $answers);
             session()->increment('incorrect');
             session()->forget(['failed', 'chance']);

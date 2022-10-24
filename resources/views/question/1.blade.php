@@ -39,8 +39,8 @@
             <section id="question">
                 <div class="number">1</div>
                 <div id="content">
-                    Pada hewan vertebrata terdapat kumpulan tulang rawan (kartilago) dan tulang keras yang membentuk
-                    suatu rangkain menurut aturan tertentu yang disebut rangka ...
+                    Hewan vertebrata memiliki kumpulan tulang rawan (kartilago) dan tulang keras yang membentuk suatu
+                    rangkain menurut aturan tertentu yang disebut rangka ...
                 </div>
                 <div class="content-soal">
                 </div>

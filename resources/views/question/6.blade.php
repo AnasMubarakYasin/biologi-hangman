@@ -38,15 +38,13 @@
         <section id="question">
             <div class="number">6</div>
             <div id="content">
-                <div class="soal-gambar">
-                    <img src="/img/soal2.png" alt="">
-                </div>
+                Zaman dahulu sebelumnya ditemukan kompor, kebanyakan orangtua menggunakan tungku. Ketika memasak,
+                biasanya dalam posisi duduk. Berbeda dengan sekarang, umumnya selalu berdiri. Nah, jika melakukan
+                aktivitas seperti memasak menggunakan tungku dalam jangkau waktu bertahun-tahun, maka akan terjadi
+                gangguan/ kelainan sistem gerak. Kemungkinan gangguan yang terjadi dari kasus tersebut …
             </div>
             <div class="content-soal">
-                Pada zaman dahulu sebelumnya ditemukan kompor, kebanyakan orangtua menggunakan tungku. Pada saat masak,
-                biasanya dalam posisi duduk. Berbeda dengan sekaran, pada umumnya selalu berdiri. Nah, jika melakukan
-                aktivitas seperti memasak menggunakan tungku dalam jangkau waktu bertahun-tahun, maka akan terjadi
-                gangguan/ kelainan pada sistem gerak. Kemungkinan gangguan yang terjadi dari kasus tersebut adalah …
+
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

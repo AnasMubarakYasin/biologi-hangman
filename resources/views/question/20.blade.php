@@ -38,13 +38,11 @@
         <section id="question">
             <div class="number">20</div>
             <div id="content">
-                Jaringan sklerenkim adalah jaringan penguat atau jaringan penyokong dengan dinding sekunder yang tebal
-                karena mengandung zat lignin. Jaringan sklerenkim ini hanya dijumpai pada organ tumbuhan yang tidak lagi
-                mengadakan pertumbuhan dan perkembangan.
-            </div>
-            <div class="content-soal">
                 Rangka dada kita dibentuk oleh sejumlah tulang antara lain yang melekat pada tulang dada dan tulang
                 punggung adalah tulang ...
+            </div>
+            <div class="content-soal">
+
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf

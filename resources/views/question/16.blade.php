@@ -38,13 +38,11 @@
         <section id="question">
             <div class="number">16</div>
             <div id="content">
-                <div class="soal-gambar">
-                    <img src="/img/soal5.png" alt="">
-                </div>
-            </div>
-            <div class="content-soal">
                 Tulang merupakan salah satu alat gerak pasif karena tidak dapat bergerak sendiri, namun harus dibantu
                 oleh …
+            </div>
+            <div class="content-soal">
+
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf
