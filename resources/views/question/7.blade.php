@@ -55,7 +55,7 @@
                 <input type="number" hidden name="question" value="7">
                 @foreach ($answer as $data)
                     @if ($data == ' ')
-                        <input type="text" name="answer[]" value="{{ old('answer.' . $loop->index) }}" disabled
+                        <input type="text" name="answer[]" value="{{ old('answer.' . $loop->index) }}" data-disabled
                             class="input-question disable">
                     @else
                         <input oninput="next(this)" type="text" name="answer[]"
@@ -71,40 +71,9 @@
 
     <script src="/js/app.js"></script>
     <script src="/js/style.js"></script>
-    <script>
-        function next(e) {
-            e.value = e.value[e.value.length - 1]?.toLowerCase()
-            e.nextElementSibling.focus()
-        }
 
-        var input = document.querySelectorAll('.input-question')
-        for (const element of input) {
-            element.addEventListener('keydown', hapus)
-        }
+    <x-scripts.typed-answer />
 
-        function hapus(e) {
-            console.log(e);
-            if (e.key == 'Unidentified') {
-                e.preventDefault()
-                e.stopPropagation()
-                if (e.target.value) {
-
-                    e.target.value = ""
-                    e.target.focus()
-                } else {}
-            }
-            if (e.key == 'Backspace') {
-                e.preventDefault()
-                var target = e.target
-                if (target.previousElementSibling.disabled) {
-                    target.value = ''
-                    target = target.previousElementSibling
-                }
-                target.value = ''
-                target.previousElementSibling.focus()
-            }
-        }
-    </script>
 </body>
 
 </html>

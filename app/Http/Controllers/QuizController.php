@@ -150,7 +150,7 @@ class QuizController extends Controller
         $question = +$data['question'];
         $answer = json_decode(Storage::get($this->answer_path));
         $next_question = $question + 1;
-        if (Str::of(Arr::join($data['answer'], ''))->lower() ==  $answer[$question - 1]) {
+        if (Str::of(Arr::join($data['answer'], ''))->replace('_', ' ')->lower() ==  $answer[$question - 1]) {
             session()->increment('correct');
             session()->forget(['failed', 'chance']);
             session()->put('question', $next_question);
