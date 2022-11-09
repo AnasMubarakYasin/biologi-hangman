@@ -38,19 +38,24 @@
         <section id="question">
             <div class="number">25</div>
             <div id="content">
-                Perhatian gambar dibawah ini!
-                <div class="soal-gambar">
-                    <img src="/img/gambar25.png" alt="">
-                </div>
+                Penyakit yang mempunyai sifat khas berupa penurunan massa tulang diserta penurunan kualitas jaringan
+                tulang yang dapat menimbulkan kerapuhan tulang adalah ...
             </div>
             <div class="content-soal">
-                Gambar diatas merupakan otot ...
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data"
                 style="padding-bottom: 10px">
                 @csrf
                 <input type="number" hidden name="question" value="25">
-                <input type="text" autofocus class="input" name="answer" value="{{ old('answer') }}">
+                @foreach ($answer as $data)
+                    @if ($data == ' ')
+                        <input type="text" name="answer[]" value="{{ old('answer.' . $loop->index) }}" disabled
+                            class="input-question disable">
+                    @else
+                        <input oninput="next(this)" type="text" name="answer[]"
+                            value="{{ old('answer.' . $loop->index) }}" class="input-question">
+                    @endif
+                @endforeach
                 <button class="btn-soal" type="submit">Cek</button>
                 <x-failed.question />
             </form>
@@ -60,6 +65,40 @@
 
     <script src="/js/app.js"></script>
     <script src="/js/style.js"></script>
+    <script>
+        function next(e) {
+            e.value = e.value[e.value.length - 1]?.toLowerCase()
+            e.nextElementSibling.focus()
+        }
+
+        var input = document.querySelectorAll('.input-question')
+        for (const element of input) {
+            element.addEventListener('keydown', hapus)
+        }
+
+        function hapus(e) {
+            console.log(e);
+            if (e.key == 'Unidentified') {
+                e.preventDefault()
+                e.stopPropagation()
+                if (e.target.value) {
+
+                    e.target.value = ""
+                    e.target.focus()
+                } else {}
+            }
+            if (e.key == 'Backspace') {
+                e.preventDefault()
+                var target = e.target
+                if (target.previousElementSibling.disabled) {
+                    target.value = ''
+                    target = target.previousElementSibling
+                }
+                target.value = ''
+                target.previousElementSibling.focus()
+            }
+        }
+    </script>
 </body>
 
 </html>

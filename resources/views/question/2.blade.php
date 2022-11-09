@@ -39,18 +39,28 @@
         <section id="question">
             <div class="number">2</div>
             <div id="content">
-                Persendian merupakan salah satu organ terpenting dalam sistem gerak. Tanpa adanya sendi tidak ada yang
-                menghubungkan dua tulang atau lebih. Tulang-tulang tersebut diikat oleh struktur yang kuat disebut
-                ligamen. Selain terdapat ligamen, juga terdapat sebuah struktur yang menghubungkan bagian tulang dengan
-                otot, struktur tersebut adalah ...
-
+                Berikut ini ciri-ciri Jenis tulang keras berdasarkan matriks penyusunnya
+                <ul>
+                    <li>Memiliki matriks retikuler yang berbentuk lingkaran (sistem havers)</li>
+                    <li>Setiap matriksnya mengandung pembuluh darah dan sel saraf</li>
+                    <li>Tidak memiliki banyak rongga</li>
+                </ul>
             </div>
             <div class="content-soal">
+                jenis tulang yang dimaksud adalah ...
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="number" hidden name="question" value="2">
-                <input type="text" autofocus class="input" name="answer" value="{{ old('answer') }}">
+                @foreach ($answer as $data)
+                    @if ($data == ' ')
+                        <input type="text" name="answer[]" value="{{ old('answer.' . $loop->index) }}" disabled
+                            class="input-question disable">
+                    @else
+                        <input oninput="next(this)" type="text" name="answer[]"
+                            value="{{ old('answer.' . $loop->index) }}" class="input-question">
+                    @endif
+                @endforeach
                 <button class="btn-soal" type="submit">Cek</button>
                 <x-failed.question />
             </form>
@@ -60,6 +70,40 @@
 
     <script src="/js/app.js"></script>
     <script src="/js/style.js"></script>
+    <script>
+        function next(e) {
+            e.value = e.value[e.value.length - 1]?.toLowerCase()
+            e.nextElementSibling.focus()
+        }
+
+        var input = document.querySelectorAll('.input-question')
+        for (const element of input) {
+            element.addEventListener('keydown', hapus)
+        }
+
+        function hapus(e) {
+            console.log(e);
+            if (e.key == 'Unidentified') {
+                e.preventDefault()
+                e.stopPropagation()
+                if (e.target.value) {
+
+                    e.target.value = ""
+                    e.target.focus()
+                } else {}
+            }
+            if (e.key == 'Backspace') {
+                e.preventDefault()
+                var target = e.target
+                if (target.previousElementSibling.disabled) {
+                    target.value = ''
+                    target = target.previousElementSibling
+                }
+                target.value = ''
+                target.previousElementSibling.focus()
+            }
+        }
+    </script>
 </body>
 
 </html>

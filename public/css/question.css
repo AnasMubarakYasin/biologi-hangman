@@ -200,3 +200,18 @@ canvas {
         padding: 0 10px;
     }
 }
+
+.input-question {
+    width: 15px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid;
+    font-size: 15px;
+    text-align: center;
+}
+#question form input:focus-visible {
+    outline: none;
+}
+.disable {
+    visibility: hidden;
+}

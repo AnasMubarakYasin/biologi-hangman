@@ -25,7 +25,7 @@ class QuizPostRequest extends FormRequest
     {
         return [
             'question' => 'required|integer|min:1',
-            'answer' => 'required|string'
+            'answer.*' => 'required'
         ];
     }
 }

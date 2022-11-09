@@ -38,16 +38,28 @@
         <section id="question">
             <div class="number">20</div>
             <div id="content">
-                Rangka dada kita dibentuk oleh sejumlah tulang antara lain yang melekat pada tulang dada dan tulang
-                punggung adalah tulang ...
+                Perhatikan ciri-ciri berikut!
+                <ul>
+                    <li>Tulang patah atau retak</li>
+                    <li>Terjadi pembengkakan</li>
+                    <li>Kemungkinan terjadi pendarahan.</li>
+                </ul>
             </div>
             <div class="content-soal">
-
+                Jenis gangguan pada sistem gerak tersebut adalah ...
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="number" hidden name="question" value="20">
-                <input type="text" autofocus class="input" name="answer" value="{{ old('answer') }}">
+                @foreach ($answer as $data)
+                    @if ($data == ' ')
+                        <input type="text" name="answer[]" value="{{ old('answer.' . $loop->index) }}" disabled
+                            class="input-question disable">
+                    @else
+                        <input oninput="next(this)" type="text" name="answer[]"
+                            value="{{ old('answer.' . $loop->index) }}" class="input-question">
+                    @endif
+                @endforeach
                 <button class="btn-soal" type="submit">Cek</button>
                 <x-failed.question />
             </form>
@@ -57,6 +69,44 @@
 
     <script src="/js/app.js"></script>
     <script src="/js/style.js"></script>
+    <script>
+        function next(e) {
+            if (e.nextElementSibling.disabled) {
+                e = e.nextElementSibling
+            }
+            e.value = e.value[e.value.length - 1]
+            e.nextElementSibling.focus()
+        }
+
+        var input = document.querySelectorAll('.input-question')
+        for (const element of input) {
+            element.addEventListener('keydown', hapus)
+        }
+
+        function hapus(e) {
+            console.log(e);
+            if (e.key == 'Unidentified') {
+                e.preventDefault()
+                e.stopPropagation()
+                if (e.target.value) {
+
+                    e.target.value = ""
+                    e.target.focus()
+                } else {}
+            }
+            if (e.key == 'Backspace') {
+                e.preventDefault()
+                var target = e.target
+                if (target.previousElementSibling.disabled) {
+                    target.value = ''
+                    target = target.previousElementSibling
+                }
+                target.value = ''
+                target.previousElementSibling.focus()
+            }
+        }
+    </script>
+</body>
 </body>
 
 </html>

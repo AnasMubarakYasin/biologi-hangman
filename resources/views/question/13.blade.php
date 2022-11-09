@@ -38,18 +38,22 @@
         <section id="question">
             <div class="number">13</div>
             <div id="content">
-                Bu evi adalah seorang ibu dari 3 orang anak yang berusia 55 tahun. Bu evi hanyalah ibu rumah tangga
-                sedangkan suaminya hanyalah tukang ojek dikawassan rumahnya. Selama mengandung ketiga anaknya bu evi
-                jarang meminum susu dan hanya mengkomsumsi makanan sederhana seperti tahu dan tempe. Lima tahun yang
-                lalu bu evi mulai mengalami gejala nyeri pada otot dan sendi. Sakit punggung yang berlebihan, serta
-                penurunan tinggi badan, gangguan yang dialami bu evi adalah …
+                Pergerakan otot untuk membengkokkan persendian membentuk sudut yang lebih kecil disebut …
             </div>
             <div class="content-soal">
             </div>
             <form autocomplete="off" action="/quiz/answer" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="number" hidden name="question" value="13">
-                <input type="text" autofocus class="input" name="answer" value="{{ old('answer') }}">
+                @foreach ($answer as $data)
+                    @if ($data == ' ')
+                        <input type="text" name="answer[]" value="{{ old('answer.' . $loop->index) }}" disabled
+                            class="input-question disable">
+                    @else
+                        <input oninput="next(this)" type="text" name="answer[]"
+                            value="{{ old('answer.' . $loop->index) }}" class="input-question">
+                    @endif
+                @endforeach
                 <button class="btn-soal" type="submit">Cek</button>
                 <x-failed.question />
             </form>
@@ -59,6 +63,40 @@
 
     <script src="/js/app.js"></script>
     <script src="/js/style.js"></script>
+    <script>
+        function next(e) {
+            e.value = e.value[e.value.length - 1]?.toLowerCase()
+            e.nextElementSibling.focus()
+        }
+
+        var input = document.querySelectorAll('.input-question')
+        for (const element of input) {
+            element.addEventListener('keydown', hapus)
+        }
+
+        function hapus(e) {
+            console.log(e);
+            if (e.key == 'Unidentified') {
+                e.preventDefault()
+                e.stopPropagation()
+                if (e.target.value) {
+
+                    e.target.value = ""
+                    e.target.focus()
+                } else {}
+            }
+            if (e.key == 'Backspace') {
+                e.preventDefault()
+                var target = e.target
+                if (target.previousElementSibling.disabled) {
+                    target.value = ''
+                    target = target.previousElementSibling
+                }
+                target.value = ''
+                target.previousElementSibling.focus()
+            }
+        }
+    </script>
 </body>
 
 </html>
